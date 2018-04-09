@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="defaultEnumTypeHandler" value="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+    </settings>
+    <typeHandlers>
+        <typeHandler handler="top.youngcoding.bootbatis.common.handler.CodeAndDescEnumHandler" javaType="top.youngcoding.bootbatis.common.CodeAndDescEnum"/>
+        <typeHandler handler="top.youngcoding.bootbatis.common.handler.CodeEnumTypeHandler" javaType="top.youngcoding.bootbatis.common.CodeEnum"/>
+        <typeHandler handler="top.youngcoding.bootbatis.common.handler.DateToLongTypeHandler" javaType="java.util.Date"/>
+    </typeHandlers>
+    <!--<mappers>-->
+        <!--<package name=""/>-->
+    <!--</mappers>-->
+</configuration>
