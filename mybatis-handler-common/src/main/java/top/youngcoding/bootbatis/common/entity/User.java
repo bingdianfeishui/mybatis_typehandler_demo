@@ -16,7 +16,7 @@ import java.util.Date;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 //@ToString
 public class User {
     private Integer id;
@@ -26,6 +26,15 @@ public class User {
     private Status status;
     private PlayerGrade playerGrade;
     private Date registerTime;
+
+    public User(String username, Gender gender, RegistryType registryType, Status status, PlayerGrade playerGrade, Date registerTime) {
+        this.username = username;
+        this.gender = gender;
+        this.registryType = registryType;
+        this.status = status;
+        this.playerGrade = playerGrade;
+        this.registerTime = registerTime;
+    }
 
     @Override
     public String toString() {

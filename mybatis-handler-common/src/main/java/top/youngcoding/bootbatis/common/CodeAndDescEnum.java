@@ -11,8 +11,7 @@ public interface CodeAndDescEnum<K, V> {
 
     static CodeAndDescEnum<?, ?> getByCode(Class<? extends CodeAndDescEnum> type, Object code) {
         if (type.isEnum() && CodeAndDescEnum.class.isAssignableFrom(type)) {
-            for (Object obj : type.getEnumConstants()
-                    ) {
+            for (Object obj : type.getEnumConstants()) {
                 CodeAndDescEnum cade = (CodeAndDescEnum) obj;
                 if (cade != null && cade.getCode().equals(code))
                     return cade;

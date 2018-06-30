@@ -10,7 +10,8 @@ import java.io.Serializable;
  */
 @Mapper
 public interface UserMapper {
-    @Insert("insert into m_user values(#{id}, #{username}, #{gender}, #{registryType}, #{status}, #{playerGrade}, #{registerTime})")
+    @Insert("insert into m_user (username, gender, registry_type, status, player_grade, register_time) values(#{username}, #{gender}, #{registryType}, #{status}, #{playerGrade}, #{registerTime})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(User user);
 
     @Select("select * from m_user where id=#{id}")

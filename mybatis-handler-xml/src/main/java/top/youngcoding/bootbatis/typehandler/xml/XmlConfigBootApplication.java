@@ -28,15 +28,16 @@ public class XmlConfigBootApplication {
         SpringApplication.run(XmlConfigBootApplication.class, args);
     }
 
-    final Integer id = 2;
-
     @Bean
     CommandLineRunner CRUD() {
         return (args -> {
             System.out.println("=============C==================");
-            User user = new User(id, "jerry", Gender.FEMALE, RegistryType.PHONE, Status.DISABLE, PlayerGrade.BRONZE, new Date());
-            System.out.println(user);
+            User user = new User("jerry", Gender.FEMALE, RegistryType.PHONE, Status.DISABLE, PlayerGrade.BRONZE, new Date());
             System.out.println(userMapper.insert(user));
+            System.out.println(user);
+
+            // get id
+            Integer id = user.getId();
 
             System.out.println("=============R==================");
             user = userMapper.selectById(id);
